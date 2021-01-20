@@ -1,0 +1,24 @@
+{
+    "name": "我的扩展程序",
+    "version": "0.0.1",
+    "manifest_version": 2,
+    "description": "我的扩展程序测试",
+    "icons": {
+    },
+    "background": {
+      "scripts": ["./src/js/background.js"]
+    },
+    "content_scripts":[
+        {
+            "matches": ["<all_urls>"],
+            "js": ["./src/js/content.js"]
+        }
+    ],
+    "permissions": ["management", "tabs", "webRequest", "webRequestBlocking", "storage", "http://*/*", "https://*/*", "unlimitedStorage", "background", "topSites"],
+    "browser_action": {
+      "default_title": "browser_action",
+      "default_icon": "./src/images/browser_action.png",
+      "default_popup": "./src/template/browser_action.html"
+    },
+     "offline_enabled":true 
+  }
