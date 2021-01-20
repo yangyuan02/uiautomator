@@ -1,0 +1,47 @@
+### 模拟实现元素拾取插件
+### mianfest.json
+
+- name: 插件的名字
+- version: 版本号
+- manifest_version:值必须是 2
+- description:插件说明
+- icons:
+- background:可常驻浏览器后台的脚本，可以连接其他页面,浏览器一打开就会执行的脚本
+  - scripts:路径数组,scripts 的情况下，会自动生成一个 html 页引用 scripts
+  - page:"background.html",也可以手动指定一个页面
+- content_scripts:content_scripts 你可以修改你当前访问的页面的 dom,放大某些特殊信息的字体,在页面中注入 HTML，为页面附加新的功能或交互
+  - matches:匹配到的地址 url,可以用http://www.google.com/*,标识["<all_urls>"]标识匹配所有
+  - css:匹配成功，按着顺序从左到右，加载 css,
+  - js:匹配成功，按着顺序从左到右，加载 js,
+  - run_at:加载时机，document_start(开始加载时)|document_end(加载结束时)|document_idle(页面空闲时),默认是页面空闲时
+- permissions:权限申请列表
+  - management:chrome.management 模块提供了管理已安装和正在运行中的扩展或应用的方法。对于重写内建的新标签页的扩展尤其有用
+  - tabs:标签 chrome.tabs
+  - webRequest: web 请求,资源拦截
+  - webRequestBlocking:资源拦截
+  - storage:插件本地存储
+  - http://_/_: 可以通过 executeScript 或者 insertCSS 访问的网站
+  - https://_/_ :可以通过 executeScript 或者 insertCSS 访问的网站
+  - unlimitedStorage:H5 文件系统免于申请权限
+  - background: 后台页面权限
+  - topSites: 常用访问
+  - downloads: 下载权限
+- browser_action:作用域整个浏览器(某些特定页面打开才显示图标（与 browser_action，app 是冲突的，三选一)
+  - default_title: 鼠标移动上去显示的 title
+  - default_icon: 必填项,通常小于 19px
+  - default_popup: 对应的 html,非必填项
+- page_action:作用域某个页面
+  - default_title: 鼠标移动上去显示的 title
+  - default_icon: 必填项,通常小于 19px
+  - default_popup: 对应的 html,非必填项
+- offline_enabled: 是否可离线
+- chrome_url_overrides:覆盖浏览器的默认页面
+  - newtab:"newtab.html"
+  - bookmarks:书签页面
+  - history: 历史记录
+- homepage_url:"https://ruphi.cn" 插件主页
+- omnibox
+  - keyword:"addto" 向地址栏注册一个关键词，用以提供搜索建议，只能设置一个
+- default_locale: "zh_CN" 默认语言
+- devtools_page:"devtools.html" devtools 页面的入口，只能指向一个 HTML 文件（不可以是 JS）
+# uiautomator
