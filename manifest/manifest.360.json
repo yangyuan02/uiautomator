@@ -1,0 +1,28 @@
+{
+	"description": "浏览器插件开发",
+	"manifest_version": 2,
+	"homepage_url": "https://www.lhyhq.cn",
+	"name": "浏览器插件开发",
+	"version": "1.0.0",
+	"author": "今晚上山打老虎",
+	"icons": {
+		"48": "logo-48.png",
+		"128": "logo-128.png"
+	},
+	"browser_action": {
+		"default_icon": "logo-48.png",
+		"default_title": "浏览器插件开发",
+		"default_popup": "popup.html"
+	},
+	"background": {
+		"scripts": ["commons.min.js", "background_script.min.js"]
+	},
+	"content_scripts": [
+		{
+			"matches": ["<all_urls>"],
+			"js": ["commons.min.js", "content_script.min.js"],
+			"run_at": "document_end"
+		}
+	],
+	"update_url": "http://upext.chrome.360.cn/intf.php?method=ExtUpdate.query"
+}

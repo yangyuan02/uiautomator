@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {                 
+        "target": "esnext", 
+        "module": "commonjs",               
+        "allowJs": true,
+        "jsx": "preserve",
+        "baseUrl": ".",
+        // "outDir": "./dist",
+        // "rootDir": "./src",
+        "removeComments": true,
+        "strict": true ,
+        "moduleResolution": "node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "forceConsistentCasingInFileNames": true,
+        "paths": {
+            "@/*": ["src/*"]
+        }
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.tsx",
+        "src/**/*.vue",
+        "tests/**/*.ts",
+        "tests/**/*.tsx"
+      ],
+      "exclude": [
+        "node_modules",
+    ]
+}

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension>
+	<id>com.zlj.test.lhyhq</id>
+	<description>浏览器插件开发</description>
+	<manifest_version>2</manifest_version>
+	<homepage_url>https://www.lhyhq.cn/</homepage_url>
+	<name>浏览器插件开发</name>
+	<version>1.0.0</version>
+	<author>今晚上山打老虎</author>
+	<show_icon>true</show_icon>
+	<request_api_version>1</request_api_version>
+	<popup page="popup.html"></popup>
+	<!-- <permissions>
+		<permission>storage</permission>
+		<permission>contextMenus</permission>
+		<permission>_all_urls_</permission>
+	</permissions>	 -->
+	<background page="background.html" />
+	<content_scripts>
+		<content_script core_type="webkit">
+			<match>_all_urls_</match>
+			<js>commons.min.js</js>
+			<js>content_script.min.js</js>
+			<run_at>document_end</run_at>
+		</content_script>
+	</content_scripts>
+</extension> 
