@@ -16,7 +16,8 @@
         "emitDecoratorMetadata": true,
         "forceConsistentCasingInFileNames": true,
         "paths": {
-            "@/*": ["src/*"]
+            "@/*": ["src/*"],
+            "@content_script/*": ["src/content_script/*"]
         },
         "types": [
             "node",

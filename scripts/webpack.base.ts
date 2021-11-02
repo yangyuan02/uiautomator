@@ -1,4 +1,4 @@
-import { cmdPath } from './utils'
+import { cmdPath, resolve } from './utils'
 import webpack from "webpack";
 const config: webpack.Configuration = {
 	mode: "production",
@@ -34,6 +34,7 @@ const config: webpack.Configuration = {
 	resolve: {
 		alias: {
 			vue: "vue/dist/vue.js",
+			'@content_script': resolve('src/content_script')
 		},
 		extensions: [".tsx", ".ts", ".js", ".vue"],
 	},
