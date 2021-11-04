@@ -6,7 +6,7 @@
 // 	}).$mount().$el
 // );
 
-import initUiPath from "/Users/yangyuan/Desktop/learn/chrome/uiautomator/src/content_script/content"
+import initUiPath from "@/content_script/content"
 
 
 initUiPath()

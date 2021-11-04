@@ -1,4 +1,5 @@
 import { cmdPath, resolve } from './utils'
+import path from 'path'
 import webpack from "webpack";
 const config: webpack.Configuration = {
 	mode: "production",
@@ -34,7 +35,7 @@ const config: webpack.Configuration = {
 	resolve: {
 		alias: {
 			vue: "vue/dist/vue.js",
-			'@content_script': resolve('src/content_script')
+			"@": cmdPath('src')
 		},
 		extensions: [".tsx", ".ts", ".js", ".vue"],
 	},
@@ -50,5 +51,7 @@ const config: webpack.Configuration = {
 		},
 	},
 };
+
+console.log(cmdPath('./src'), '222')
 
 export default config;

@@ -15,13 +15,16 @@
         "experimentalDecorators": true,
         "emitDecoratorMetadata": true,
         "forceConsistentCasingInFileNames": true,
+        "skipLibCheck": true,
+        "sourceMap": true,
         "paths": {
-            "@/*": ["src/*"],
-            "@content_script/*": ["src/content_script/*"]
+            "@/*": [
+                "src/*"
+              ]
         },
         "types": [
             "node",
-            "chrome"
+            "chrome",
         ]
     },
     "include": [
